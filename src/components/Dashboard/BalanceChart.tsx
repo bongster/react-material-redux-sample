@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useTheme } from "@material-ui/core/styles";
 import { PieChart, Pie, Cell, ResponsiveContainer, Sector } from "recharts";
 import { withWidth } from "@material-ui/core";
 
@@ -24,8 +23,6 @@ const renderActiveShape = (props: any) => {
     endAngle,
     fill,
     payload,
-    percent,
-    value,
   } = props;
   return (
     <g>
@@ -65,7 +62,6 @@ const renderActiveShape = (props: any) => {
 };
 
 const BalanceChart: React.FC = (props) => {
-  const theme = useTheme();
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = (data: any, index: number) => {
     setActiveIndex(index);

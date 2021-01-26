@@ -5,10 +5,9 @@ import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Icon from "@material-ui/core/Icon";
 import Link from "@material-ui/core/Link";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { useLocation } from "react-router-dom";
@@ -58,8 +57,8 @@ type Props = PropsFromRedux & {
 
 const SignIn = (props: Props) => {
   const classes = useStyles();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin@test.com");
+  const [password, setPassword] = useState("password");
 
   const location = useLocation();
   const { from }: any = location.state || { from: { pathname: "/" } };
@@ -105,17 +104,6 @@ const SignIn = (props: Props) => {
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
           />
-          {/* <Button
-            variant="contained"
-            fullWidth
-            color="secondary"
-            disabled={!!verifyCount || phone.length < 8}
-            className={classes.button}
-            endIcon={<Icon>send</Icon>}
-            onClick={(e) => reverify(e)}
-          >
-            re{"-"}Verify {verifyCount ? `(${verifyCount})s` : ""}
-          </Button> */}
           <Button
             type="submit"
             fullWidth

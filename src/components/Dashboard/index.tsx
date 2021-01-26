@@ -22,7 +22,6 @@ import Chart from "./Chart";
 import Deposits from "./Deposits";
 import Orders from "./Orders";
 import { Route, Switch, useRouteMatch } from "react-router";
-import { TaskGroup } from "../../pages";
 import { useDispatch } from "react-redux";
 import { logout } from "../../redux/store/auth/actions";
 import BalanceChart from "./BalanceChart";
@@ -237,9 +236,6 @@ const Dashboard: React.FC = () => {
                 />
               )}
             />
-            <Route path={`${path}taskgroups`}>
-              <TaskGroup />
-            </Route>
           </Switch>
           <Box pt={4}>
             <Copyright />
